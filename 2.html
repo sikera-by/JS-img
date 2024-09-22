@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <h1>Работа с массивами</h1>
+
+    <input type="text" id="img1">
+    <input type="button" value="Добавить" id="addImg">
+
+    <p id="massive"></p>
+
+    <script>
+        //=============ОБЪЯВЛЕНИЕ МАССИВА=================
+
+        let array3 = [1, 3, 2, 5, -7, 9, 123]
+
+        console.log(array3.length)
+        console.log(array3[array3.length - 1])
+        console.log(array3.at(-1))
+        //=====ФОРМИРОВАНИЕ МАССИВА=====
+
+        function intRandom(min, max) {
+            return Math.floor(Math.random() * (max - min) + min)
+        }
+
+        console.log(intRandom(0, 10))
+
+        const mass = [];
+
+        for (let i = 0; i < 5; i++) {
+            mass[i] = intRandom(-100, 111)
+        }
+
+        console.log(mass)
+
+        for (let elem of mass) {
+            massive.innerHTML += `${elem}, `
+        }
+
+        //=======МЕТОДЫ МАССИВОВ========
+
+        let lastElem = mass.pop() //=удаляет последний элемент=
+        console.log(lastElem, mass)
+        mass.push(23, 2231, 56)
+        console.log(mass) //=добавляет новый элемент=
+        mass.unshift(45, 12) //=добавляет новый элемент в начале=
+        console.log(mass)
+        mass.shift() //=удаляет первый элемент=
+        console.log(mass)
+
+        //===============================
+
+        // let spliceMass = mass.splice(4, 5) //с кол-во
+        // console.log(mass, spliceMass)
+
+        let sliceMass = mass.slice(2, 5) // с - по
+        console.log(sliceMass, mass)
+
+        mass.forEach(function (v, ind, arr) {
+            console.log(v, ind)
+        })
+
+        //================================
+
+        const imgMass = ['doct', 'karl', 'vini', 'pop']
+
+        //=====ДОБАВЛЕНИЕ И УДАЛЕНИЕ======
+
+        imgMass.push('zaj', 'volk')
+        imgMass.pop()
+
+        imgMass.slice(0, 2)
+
+        for (let element of imgMass) {
+            massive.innerHTML += `<img src="Img/${element}.gif">`
+        }
+
+        //===============================================
+
+        addImg.onclick = function () {
+            let n = img1.value;
+            imgMass.push(n)
+            massive.innerHTML = '';
+            for (let element of imgMass) {
+                massive.innerHTML += `<img src="Img/${element}.gif">`
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
