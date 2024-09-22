@@ -101,10 +101,14 @@
         }
 
         delImg.onclick = function () {
-            imgMass.pop()
-            massive.innerHTML = '';
-            for (let element of imgMass) {
-                massive.innerHTML += `<img src="Img/${element}.gif">`
+            let yes = confirm('Ты уверен в удалении?')
+            console.log(yes)
+            if (yes == true) {
+                imgMass.pop()
+                massive.innerHTML = '';
+                for (let element of imgMass) {
+                    massive.innerHTML += `<img src="Img/${element}.gif">`
+                }
             }
         }
 
