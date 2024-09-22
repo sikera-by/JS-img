@@ -17,6 +17,7 @@
 
     <input type="text" id="img1">
     <input type="button" value="Добавить" id="addImg">
+    <input type="button" value="Удалить" id="delImg">
 
     <p id="massive"></p>
 
@@ -96,6 +97,15 @@
                 massive.innerHTML += `<img src="Img/${element}.gif">`
             }
         }
+
+        delImg.onclick = function () {
+            imgMass.pop()
+            massive.innerHTML = '';
+            for (let element of imgMass) {
+                massive.innerHTML += `<img src="Img/${element}.gif">`
+            }
+        }
+
 
 
     </script>
