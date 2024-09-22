@@ -90,11 +90,13 @@
         //===============================================
 
         addImg.onclick = function () {
-            let n = img1.value;
-            imgMass.push(n)
-            massive.innerHTML = '';
-            for (let element of imgMass) {
-                massive.innerHTML += `<img src="Img/${element}.gif">`
+            if (img1.value != '') {
+                let n = img1.value;
+                imgMass.push(n)
+                massive.innerHTML = '';
+                for (let element of imgMass) {
+                    massive.innerHTML += `<img src="Img/${element}.gif">`
+                }
             }
         }
 
