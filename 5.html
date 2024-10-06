@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="button" value="Нажми" id="btn">
+    <input type="button" value="Нажми2" id="btn2">
+    <style>
+        body {
+            background-color: rgb(105, 105, 105);
+        }
+
+        #btn {
+            width: 300px;
+            height: 200px;
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+
+        #btn:active {
+            background-color: rgb(193, 228, 255);
+        }
+    </style>
+
+    <script>
+        //==============Функции без параметров=========================
+        // btn.onclick = f1;
+        function f1() {
+            console.log('Hello, World!')
+        }
+
+        function dont() {
+            console.log('++')
+        }
+
+        btn.addEventListener('click', f1);
+        btn.addEventListener('click', dont);
+
+
+        // btn.onclick = dont;
+
+        //===============================================
+        let sum0 = sum(2, 5)
+        console.log(sum0)
+
+        function sum(a, b) {
+            console.log(a)
+            return a + b
+        }
+
+        function sum2(a, b) {
+            console.log(a + b)
+        }
+
+        btn2.onclick = function () {
+            let s = sum(6, 7)
+            console.log(s)
+        }
+
+        btn2.onclick = function () {
+            sum2(9, 2)
+        }
+
+    </script>
+</body>
+
+</html>

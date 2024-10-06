@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //====ФОРМИРОВАНИЕ МАССИВА====
+        function intRandom(min, max) {
+            return Math.floor(Math.random() * (max - min) + min)
+        }
+
+        //============================
+        const arr = [];
+        //====ФОРМИРОВАНИЕ МАССИВА====
+        for (let i = 0; i < 10; i++) {
+            arr[i] = intRandom(0, 10)
+            console.log(arr[i])
+        }
+        // console.log(arr)
+
+        //====ПЕРЕБОР МАССИВА====
+
+        arr.forEach(function (elem, index, array) {
+            console.log(elem)
+        })
+
+        const arrnew = arr.map(function (elem, index, array) {
+            return elem * 2;
+        }).filter(function (el, index) {
+            return el % 3 == 0;
+        })
+
+        const arrFilter = arr.filter(function (el, i) {
+            if (el > 0 || el % 2 == 0) return el;
+        })
+
+        // console.log(arrFilter)
+        // console.log(arrnew)
+
+        //================ПОИСК ЧИСЛА В МАССИВЕ===================
+        // let firstEl = arr.find(function (el, index) {
+        //     if (el == 5) return el;
+        // })
+
+        let firstEl = arr.find((el => el == 5))
+        let firstIndex = arr.findIndex((el, index) => el == 5)
+
+        console.log(firstEl, firstIndex)
+
+        // let el2 = arr.indexOf(5)
+        // console.log(el2)
+        // let el3 = arr.lastIndexOf(5)
+        // console.log(el3)
+        // let el4 = arr.includes(5)
+        // console.log(el4)
+
+        //==================СОРТИРОВКА МАССИВА======================
+
+        arr.sort();
+        console.log(arr.sort())
+
+        arr.reverse();
+        console.log(arr.reverse())
+
+        const arr2 = ['202', '22', '34', '10'];
+        console.log(arr2.sort((a, b) => a - b))
+
+        //=================СРЕДНЕЕ ЗНАЧЕНИЕ ЭЛЕМЕНТОВ МАССИВА====================
+
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+            sum += arr[i];
+            // console.log(sum, arr[i])
+        }
+
+        let avg = sum / arr.length;
+        console.log("Среднее арифметическое = " + avg)
+
+        //============================================
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] == 5) continue;
+            console.log(arr[i])
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

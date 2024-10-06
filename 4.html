@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    .c1 {
+        background: blue;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+    }
+</style>
+
+<body>
+
+    <script>
+        function intRandom(min, max) {
+            return Math.floor(Math.random() * (max - min) + min)
+        }
+
+        //======================================================
+        const arr = [];
+        for (let i = 0; i < 10; i++) {
+            arr[i] = intRandom(0, 1000);
+        }
+
+        console.log(arr)
+
+        //====МАКСИМУМ И МИНИМУМ=====
+
+        let max = arr[0], min = arr[0];
+        for (let i = 1; i < arr.length; i++) {
+            if (max < arr[i])
+                max = arr[i]
+            //==================
+            if (min > arr[i])
+                min = arr[i]
+        }
+
+        console.log(arr)
+        let prom;
+        let a = 3;
+        let b = 10
+        prom = b;
+        b = a;
+        a = prom;
+        if (min % 5 == 0) {
+            prom = min;
+            min = max;
+            max = prom;
+        }
+        console.log(min, max)
+        console.log(a, b)
+
+    </script>
+</body>
+
+</html>
