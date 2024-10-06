@@ -6,6 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
   </head>
   <body>
-        <h1>Welcome to My Website</h1>  
+    <styles>
+      p {
+      font-size: 20px:
+      }
+    </styles>
+        <h1>Welcome to My test repository</h1>
+        <p>Here I'm just trying to lear \n JavaScript in IT Class. Wish me luck.</p>
   </body>
 </html>
