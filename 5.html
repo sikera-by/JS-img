@@ -10,6 +10,16 @@
 <body>
     <input type="button" value="Нажми" id="btn">
     <input type="button" value="Нажми2" id="btn2">
+
+    <div>
+        <hr>
+        <div id="rez"> 0 </div>
+    </div>
+    <input type="button" value="-" id="minus">
+    <input type="button" value="+" id="plus">
+    <hr>
+    <div id="div0">
+    </div>
     <style>
         body {
             background-color: rgb(105, 105, 105);
@@ -20,10 +30,25 @@
             height: 200px;
             border-radius: 10px;
             transition: 0.2s;
+            cursor: pointer;
         }
 
         #btn:active {
             background-color: rgb(193, 228, 255);
+        }
+
+        #rez {
+            font-size: 30px;
+            font-weight: normal;
+            font-family: serif;
+        }
+
+        #div0 {
+            width: 30px;
+            height: 10px;
+            background-color: brown;
+            cursor: cell;
+            transition: 1s;
         }
     </style>
 
@@ -49,7 +74,6 @@
         console.log(sum0)
 
         function sum(a, b) {
-            console.log(a)
             return a + b
         }
 
@@ -57,14 +81,51 @@
             console.log(a + b)
         }
 
-        btn2.onclick = function () {
+        // btn2.onclick = function () {
+        //     let s = sum(6, 7)
+        //     console.log(s)
+        // }
+
+        // btn2.onclick = function () {
+        //     sum2(9, 2)
+        // }
+
+        btn2.addEventListener('click', function () {
             let s = sum(6, 7)
             console.log(s)
+        });
+        btn2.addEventListener('click', function () {
+            let s = sum(2, 9)
+            console.log(s)
+        });
+
+        //==============ЛОКАЛЬНЫЕ И ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫ===========================
+
+        let minus = document.getElementById('minus')
+        let plus = document.getElementById('plus')
+        let rez = document.getElementById('rez').innerHTML;
+
+        plus.onclick = function () {
+            rez++;
+            document.getElementById('rez').innerHTML = rez;
         }
 
-        btn2.onclick = function () {
-            sum2(9, 2)
+        minus.onclick = function () {
+            rez--;
+            document.getElementById('rez').innerHTML = rez;
         }
+
+        let div0 = document.getElementById('div0')
+        let width = div0.clientWidth;
+        let height = div0.clientHeight;
+        div0.onmouseover = function () {
+            width += 10;
+            div0.style.width = width + "px"
+            height += 10;
+            div0.style.height = height + "px"
+        }
+
+
 
     </script>
 </body>
