@@ -12,6 +12,6 @@
       }
     </styles>
         <h1>Welcome to My test repository</h1>
-        <p>Here I'm just trying to lear \n JavaScript in IT Class. Wish me luck.</p>
+        <p>Here I'm just trying to learn JavaScript in IT Class. Wish me luck.</p>
   </body>
 </html>
