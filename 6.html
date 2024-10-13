@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Стрелочные функции</title>
+</head>
+
+<body>
+    <style>
+        body {
+            background-color: black;
+        }
+    </style>
+
+    <input type="button" value="Нажми" id="btn0">
+    <hr>
+    <input type="text" id="z1">
+    <input type="button" value="Нажми" id="btn1">
+    <hr>
+    <input type="button" value="Нажми" id="btn2">
+
+    <script>
+        //========Стрелочные функции==============
+
+        console.log(sumNum(2, 24))
+
+        function sumNum(a, b) {
+            return a + b;
+        }
+
+        console.log(sumNum(4, 234))
+
+        //========Стрелочный вид==================
+
+        //console.log(sumNum2(2, 685)) -  не работает, потому что функция не объявлена
+
+        const sumNum2 = (a, b) => a + b;
+        // sumNum2 = 9;
+        console.log(sumNum2(2, 685))
+
+        btn0.onclick = () => console.log(this)
+
+        //========================================
+
+        btn1.onclick = function (a, b) {
+            if (z1.value != "") {
+                let sum = 0;
+                let number = +z1.value;
+                while (number > 0) {
+                    let a = number % 10;
+                    sum += a;
+                    number = parseInt(number / 10)
+                }
+                console.log(`В числе ${z1.value} сумма цифр = ${sum}`)
+            }
+        }
+
+        //=============================================================
+
+        btn2.onclick = function (a, b) {
+            if (z1.value !=) {
+                let n = z1.value;
+                console.log(n);
+            }
+        }
+
+    </script>
+
+    <script src="fn.js"></script>
+</body>
+
+</html>
