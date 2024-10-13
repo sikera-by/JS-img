@@ -20,7 +20,12 @@
     <input type="button" value="Нажми" id="btn1">
     <hr>
     <input type="button" value="Нажми" id="btn2">
+    <hr>
+    <input type="button" value="Нажми" id="btn3">
+    <hr>
+    <img src="Img/zaj.gif" id="img1">
 
+    <script src="fn.js"></script>
     <script>
         //========Стрелочные функции==============
 
@@ -60,7 +65,7 @@
         //=============================================================
 
         btn2.onclick = function (a, b) {
-            let newStr;
+            let newStr = '';
             if (z1.value != '') {
                 let n = z1.value;
                 console.log(n, n.length)
@@ -73,9 +78,26 @@
             }
         }
 
-    </script>
+        //============Принимает число => кол-во цифр в нём============
 
-    <script src="fn.js"></script>
+        function kolvo(str) {
+            console.log(`В строке ${str} ${str.length} символов`)
+        }
+
+        btn3.onclick = function () {
+            kolvo(z1.value)
+        }
+
+        //==============================================================
+
+        const arrImg = ['bura', 'zaj', 'volk', 'doct', 'karl', 'vini'];
+        img1.onclick = function () {
+            let rnd = integerRandom(0, arrImg.length);
+            img1.src = `Img/${arrImg[rnd]}.gif`
+        }
+
+
+    </script>
 </body>
 
 </html>
