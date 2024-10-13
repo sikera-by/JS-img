@@ -107,8 +107,10 @@
             let n2 = integerRandom(0, arrStr.length)
             img1.src = `Img/${arrImg[n1]}.gif`
             p0.innerHTML = arrStr[n2]
-            if (n1 = n2) {
+            if (n1 == n2) {
                 p0.style.backgroundColor = 'red'
+            } else {
+                p0.style.backgroundColor = 'white'
             }
         }
 
