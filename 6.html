@@ -9,8 +9,10 @@
 
 <body>
     <style>
-        body {
-            background-color: black;
+        #p0 {
+            border: 2px dotted blue;
+            color: rgb(55, 55, 55);
+            font-size: 24px;
         }
     </style>
 
@@ -24,6 +26,7 @@
     <input type="button" value="Нажми" id="btn3">
     <hr>
     <img src="Img/zaj.gif" id="img1">
+    <p id="p0"></p>
 
     <script src="fn.js"></script>
     <script>
@@ -91,11 +94,23 @@
         //==============================================================
 
         const arrImg = ['bura', 'zaj', 'volk', 'doct', 'karl', 'vini'];
+        const arrStr = ['буратино', 'зая', 'волк', 'доктор', 'карлсон', 'вини'];
         img1.onclick = function () {
             let rnd = integerRandom(0, arrImg.length);
             img1.src = `Img/${arrImg[rnd]}.gif`
         }
 
+        //===============================================================
+
+        btn3.onclick = function () {
+            let n1 = integerRandom(0, arrImg.length)
+            let n2 = integerRandom(0, arrStr.length)
+            img1.src = `Img/${arrImg[n1]}.gif`
+            p0.innerHTML = arrStr[n2]
+            if (n1 = n2) {
+                p0.style.backgroundColor = 'red'
+            }
+        }
 
     </script>
 </body>
