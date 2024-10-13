@@ -60,9 +60,16 @@
         //=============================================================
 
         btn2.onclick = function (a, b) {
-            if (z1.value !=) {
+            let newStr;
+            if (z1.value != '') {
                 let n = z1.value;
-                console.log(n);
+                console.log(n, n.length)
+                for (let i = 0; i < n.length; i++) {
+                    if (n[i] != 0) {
+                        newStr += n[i]
+                    }
+                    console.log(newStr)
+                }
             }
         }
 
